@@ -343,6 +343,11 @@ shared_examples 'a container' do
       expect(container.resolve(:item)).to eql('item')
     end
 
+    it 'sets freeze to a noop' do
+      container.freeze
+      expect(container.frozen?).to be false
+    end
+
     describe 'with block argument' do
       it 'executes the block with the given stubs' do
         expect { |b| container.stub(:item, 'stub', &b) }.to yield_control

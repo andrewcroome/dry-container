@@ -30,6 +30,10 @@ module Dry
       def enable_stubs!
       end
 
+      # Make freeze on a stub-enabled container a noop
+      def freeze
+      end
+
       private
 
       # Stubs container
